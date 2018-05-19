@@ -18,9 +18,10 @@ class GameHeader extends Component {
 
                     <p className="GameHeader__info">
                         This game was made as a demo for a <a href="#">PhraseApp Blog article</a> and is
-                        released under the MIT license. It was made with <a href="https://reactjs.org/">React.</a>
-                        {' '}Check out the source code <a href="#">on Github</a>. Happy coding {' '}
-                        <code>:)</code>
+                        released under the <a href="https://github.com/ashour/tap-the-pairs-game-demo/blob/master/LICENSE">MIT license</a>.
+                        It was made with <a href="https://reactjs.org/">React.</a> Check out the source code{' '}
+                        <a href="https://github.com/ashour/tap-the-pairs-game-demo">on Github</a>.
+                        Happy coding <code>:)</code>
                     </p>
                 </div>
             </div>
