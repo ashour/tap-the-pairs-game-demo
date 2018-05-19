@@ -74,12 +74,13 @@ class TapThePairs extends Component {
 
         if (pair.completed) { return; }
 
+        pair.toggleSelected(wordKey);
+
         if (prevSelection &&
             prevSelection.pair[prevSelection.wordKey] === pair.get(wordKey)) {
+            this.setState({ pairs });
             return;
         }
-
-        pair.toggleSelected(wordKey);
 
         if (prevSelection === null) {
             // fresh start, new pairing attempt

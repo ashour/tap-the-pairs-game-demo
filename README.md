@@ -4,7 +4,7 @@ Tap the Pairs is a word-matching game designed to help you learn a new language.
 This game was made as a demo for a [PhraseApp Blog article](#).
 It was made with [React](https://reactjs.org/).
 
-See it running live [on Heroku](#).
+See it running live [on Heroku](https://tap-pairs-game-demo.herokuapp.com/).
 
 ## Installation and development
 1. Clone this repo
