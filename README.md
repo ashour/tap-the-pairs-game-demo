@@ -7,8 +7,14 @@ It was made with [React](https://reactjs.org/).
 See it running live [on Heroku](#).
 
 ## Installation and development
+1. Clone this repo
+1. Get a [Yandex API key](https://translate.yandex.com/developers/keys). (It's free)
+1. Create a `{repo_root}/src/config/translation-api-key.js` file that contains one line:
+```
+export default 'translation_api_key_string';
+```
 1. Run `npm install` or `yarn`
-2. Open [http://localhost:3000](http://localhost:3000) in your browser
-3. You're off to the races
+1. Open [http://localhost:3000](http://localhost:3000) in your browser
+1. You're off to the races
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
