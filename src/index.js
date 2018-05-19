@@ -4,6 +4,4 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Game from './components/Game';
 
-require('dotenv').config();
-
 ReactDOM.render(<Game />, document.getElementById('root'));
