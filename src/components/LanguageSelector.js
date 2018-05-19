@@ -1,15 +1,20 @@
+import orderBy from 'lodash/orderBy';
 import React, { Component } from 'react';
 
 import fetchLanguages from '../http/fetch-languages';
 
 class LanguageSelector extends Component {
     state = {
-        languages: {},
+        languages: [],
     }
 
     componentDidMount() {
         fetchLanguages()
-            .then(languages => this.setState({ languages }))
+            .then((languages) => {
+                const sorted = orderBy(languages, 'name');
+
+                this.setState({ languages: sorted });
+            })
             .catch(error => console.log(error));
     }
 
@@ -25,9 +30,9 @@ class LanguageSelector extends Component {
                     value={this.props.value}
                     onChange={e => this.props.onChange(e.target.value)}
                 >
-                    {Object.keys(this.state.languages).map(code => (
+                    {this.state.languages.map(({ code, name }) => (
                         <option value={code} key={code}>
-                            {this.state.languages[code]}
+                            {name}
                         </option>
                     ))}
                 </select>

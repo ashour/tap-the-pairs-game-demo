@@ -19,15 +19,15 @@ export default function fetchLanguages(from = 'en', options) {
     .then(({ dirs, langs }) => {
         // Translation languages that the API supports
         // translating _to_ given our _from_ language.
-        const supportedToLanguages = {};
+        const supportedToLanguages = [];
 
         // Supported directions e.g. from English to Spanish
         // represented as 'en-es'.
         dirs.filter(dir => startsWith(dir, `${from}-`))
             // 'en-es' becomes 'es'
             .map(supported => supported.split('-')[1])
-            // 'es' becomes ...{ 'es': 'Spanish' }
-            .map(code => { supportedToLanguages[code] = langs[code] });
+            // 'es' becomes { code: 'es', name: 'Spansish' }
+            .map(code => supportedToLanguages.push({ code, name: langs[code] }));
 
         return Promise.resolve(supportedToLanguages);
     });
