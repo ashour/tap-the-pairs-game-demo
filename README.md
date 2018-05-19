@@ -9,10 +9,8 @@ See it running live [on Heroku](#).
 ## Installation and development
 1. Clone this repo
 1. Get a [Yandex API key](https://translate.yandex.com/developers/keys). (It's free)
-1. Create a `{repo_root}/src/config/translation-api-key.js` file that contains one line:
-```
-export default 'translation_api_key_string';
-```
+1. Rename `{project_root}/.env.example` file to `.env`
+1. Paste your Yandex API key after `REACT_APP_YANDEX_TRANSLATION_API_KEY=` in `.env` and save
 1. Run `npm install` or `yarn`
 1. Open [http://localhost:3000](http://localhost:3000) in your browser
 1. You're off to the races
