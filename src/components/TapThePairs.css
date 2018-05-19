@@ -1,0 +1,18 @@
+.TapThePairs {
+    border: 1px solid #D0D0D0;
+    background-color: #FCFCFC;
+    padding: 0 2rem 2rem;
+    border-radius: 12px;
+    box-shadow: inset rgba(0, 0, 0, 0.15) 0 1px 1px 0;
+}
+
+.TapThePairs__header {
+    color: #495057;
+    margin-bottom: 1.25rem;
+}
+
+.TapThePairs__words {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

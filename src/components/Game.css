@@ -1,0 +1,21 @@
+.Game__controls {
+    display: flex;
+    justify-content: space-around;
+
+    padding: 25px;
+    border: 1px solid #D0D0D0;
+    border-radius: 12px;
+    margin: 0 0 60px;
+
+    position: relative;
+}
+
+.Game__controls__header {
+    color: #495057;
+    background-color: #F5F5F5;
+    position: absolute;
+    padding: 0 10px;
+    top: -23px;
+    left: 15px;
+    transform: translateY(-50%);
+}

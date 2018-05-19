@@ -1,0 +1,29 @@
+.GameHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 5rem;
+}
+
+.GameHeader__logo {
+    display: block;
+    box-sizing: border-box;
+    width: 40rem;
+    margin-right: 10rem;
+}
+
+.GameHeader__lead {
+    font-size: 1.3rem;
+    line-height: 1.45;
+    color: #495057;
+    font-weight: 125;
+    margin-bottom: 0;
+}
+
+.GameHeader__info {
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #495057;
+    font-weight: 125;
+    margin-bottom: 0;
+}

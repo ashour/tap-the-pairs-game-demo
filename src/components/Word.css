@@ -1,0 +1,39 @@
+.Word {
+    display: inline-block;
+    padding: 1rem;
+    margin: 0.25rem;
+    border-radius: 6px;
+    background-color: #444;
+    color: white;
+    border: 1px solid #333;
+
+    /* Disable text selection */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+    -webkit-user-select: none; /* Chrome, Safari, and Opera */
+    -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+    user-select: none;
+
+    box-shadow: rgba(0, 0, 0, 0.3) 0 2px 1px 0;
+}
+.Word:hover {
+    cursor: pointer;
+}
+
+.Word--selected {
+    background-color: #4092FC;
+    color: white;
+    border-color: #3273C6;
+    box-shadow: none;
+}
+
+.Word--mismatched {
+    background-color: #e84855;
+    border-color: #A4353F;
+}
+
+.Word--completed {
+    background-color: #2DA356;
+    border-color: #298046;
+}
