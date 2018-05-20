@@ -1,12 +1,10 @@
 import orderBy from 'lodash/orderBy';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import fetchLanguages from '../http/fetch-languages';
 
-class LanguageSelector extends Component {
-    state = {
-        languages: [],
-    }
+class LanguageSelector extends PureComponent {
+    state = { languages: [] }
 
     componentDidMount() {
         fetchLanguages()

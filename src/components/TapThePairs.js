@@ -29,7 +29,7 @@ class TapThePairs extends Component {
         }
     }
 
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate(prevProps) {
         if (this.props.pairs !== prevProps.pairs) {
             this.generateRandomWordOrder();
         }
@@ -66,7 +66,7 @@ class TapThePairs extends Component {
      * @param {number} pairIndex
      * @param {string} wordKey 'first' | 'second'
      */
-    attemptPairing(pairIndex, wordKey) {
+    attemptMatching(pairIndex, wordKey) {
         const { pairs } = this.state;
         let { prevSelection } = this.state;
 
@@ -123,7 +123,7 @@ class TapThePairs extends Component {
                                 selected={first.selected}
                                 mismatched={first.mismatched}
                                 order={this.getOrder(i, 'first')}
-                                onClick={() => this.attemptPairing(i, 'first')}
+                                onClick={() => this.attemptMatching(i, 'first')}
                             />
 
                             <Word
@@ -132,7 +132,7 @@ class TapThePairs extends Component {
                                 selected={second.selected}
                                 mismatched={second.mismatched}
                                 order={this.getOrder(i, 'second')}
-                                onClick={() => this.attemptPairing(i, 'second')}
+                                onClick={() => this.attemptMatching(i, 'second')}
                             />
                         </React.Fragment>
                     ))}

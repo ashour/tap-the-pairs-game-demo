@@ -7,7 +7,7 @@ import translationApiKey from '../config/translation-api-key';
  * @param {string} [from = 'en']
  * @returns {Promise<Array>}
  */
-export default function fetchLanguages(from = 'en', options) {
+export default function fetchLanguages(from = 'en') {
     return http.postWithFormUrlEncoded(
         'https://translate.yandex.net/api/v1.5/tr.json/getLangs',
         {
@@ -26,7 +26,7 @@ export default function fetchLanguages(from = 'en', options) {
         dirs.filter(dir => startsWith(dir, `${from}-`))
             // 'en-es' becomes 'es'
             .map(supported => supported.split('-')[1])
-            // 'es' becomes { code: 'es', name: 'Spansish' }
+            // 'es' becomes { code: 'es', name: 'Spanish' }
             .map(code => supportedToLanguages.push({ code, name: langs[code] }));
 
         return Promise.resolve(supportedToLanguages);

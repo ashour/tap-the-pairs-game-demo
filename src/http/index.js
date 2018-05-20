@@ -14,7 +14,7 @@ const http = {
     /**
      * @param {string} url
      * @param {Object<string>} params
-     * @requires {Promise}
+     * @returns {Promise}
      */
     postWithFormUrlEncoded(url, params) {
         return axios({
