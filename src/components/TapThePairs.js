@@ -42,7 +42,7 @@ class TapThePairs extends Component {
 
         const wordCount = pairs.length * 2;
 
-        for (let i = 1; i <= wordCount; i += 1) {
+        for (let i = 0; i <= wordCount; i += 1) {
             order.push(i);
         }
 
