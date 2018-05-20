@@ -5,7 +5,7 @@ import translationApiKey from '../config/translation-api-key';
 
 /**
  * @param {string} [from = 'en']
- * @returns {Promise<Array>}
+ * @returns {Promise<Array<Object<string>>>}
  */
 export default function fetchLanguages(from = 'en') {
     return http.postWithFormUrlEncoded(

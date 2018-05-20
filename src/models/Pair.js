@@ -1,11 +1,11 @@
 class Pair {
     /**
-     * @param {string} first
-     * @param {string} second
+     * @param {string} firstWord
+     * @param {string} secondWord
      */
-    constructor(first, second) {
-        this.first = { word: first, selected: false, mismatched: false };
-        this.second = { word: second, selected: false, mismatched: false };
+    constructor(firstWord, secondWord) {
+        this.first = { word: firstWord, selected: false, mismatched: false };
+        this.second = { word: secondWord, selected: false, mismatched: false };
 
         this.completed = false;
     }

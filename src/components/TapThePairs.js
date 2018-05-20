@@ -17,37 +17,36 @@ class TapThePairs extends Component {
         super(props);
 
         this.state = {
-            wordOrder: [],
             pairs: props.pairs,
             prevSelection: null,
+            wordOrder: this.generateRandomWordOrder(props.pairs),
         };
-    }
-
-    componentDidMount() {
-        if (this.state.pairs.length > 0) {
-            this.generateRandomWordOrder();
-        }
     }
 
     componentDidUpdate(prevProps) {
         if (this.props.pairs !== prevProps.pairs) {
-            this.generateRandomWordOrder();
+            const wordOrder = this.generateRandomWordOrder(this.props.pairs);
+
+            this.setState({ wordOrder });
         }
     }
 
     /**
      * Generate the random order of words for the play round
+     *
+     * @param {Array<Pair>} pairs
+     * @return {Array<number>} randomized array indexes
      */
-    generateRandomWordOrder() {
+    generateRandomWordOrder(pairs) {
         const order = [];
 
-        const wordCount = this.state.pairs.length * 2;
+        const wordCount = pairs.length * 2;
 
         for (let i = 1; i <= wordCount; i += 1) {
             order.push(i);
         }
 
-        this.setState({ wordOrder: shuffle(order) });
+        return shuffle(order);
     }
 
     /**
@@ -56,7 +55,7 @@ class TapThePairs extends Component {
      * @param {number} pairIndex
      * @param {string} wordKey 'first' | 'second'
      */
-    getOrder(pairIndex, wordKey) {
+    getWordOrder(pairIndex, wordKey) {
         const wordIndex = (pairIndex * 2) + (wordKey === 'first' ? 0 : 1);
 
         return this.state.wordOrder[wordIndex];
@@ -76,9 +75,10 @@ class TapThePairs extends Component {
 
         pair.toggleSelected(wordKey);
 
+        // check if we're tapping the same word twice in a row
         if (prevSelection &&
-            prevSelection.pair[prevSelection.wordKey] === pair.get(wordKey)) {
-            this.setState({ pairs });
+            prevSelection.pair.get(prevSelection.wordKey) === pair.get(wordKey)) {
+            this.setState({ pairs, prevSelection: null });
             return;
         }
 
@@ -122,7 +122,7 @@ class TapThePairs extends Component {
                                 completed={completed}
                                 selected={first.selected}
                                 mismatched={first.mismatched}
-                                order={this.getOrder(i, 'first')}
+                                order={this.getWordOrder(i, 'first')}
                                 onClick={() => this.attemptMatching(i, 'first')}
                             />
 
@@ -131,7 +131,7 @@ class TapThePairs extends Component {
                                 completed={completed}
                                 selected={second.selected}
                                 mismatched={second.mismatched}
-                                order={this.getOrder(i, 'second')}
+                                order={this.getWordOrder(i, 'second')}
                                 onClick={() => this.attemptMatching(i, 'second')}
                             />
                         </React.Fragment>
