@@ -27,7 +27,7 @@ export default function fetchLanguages(from = 'en') {
             // 'en-es' becomes 'es'
             .map(supported => supported.split('-')[1])
             // 'es' becomes { code: 'es', name: 'Spanish' }
-            .map(code => supportedToLanguages.push({ code, name: langs[code] }));
+            .forEach(code => supportedToLanguages.push({ code, name: langs[code] }));
 
         return Promise.resolve(supportedToLanguages);
     });

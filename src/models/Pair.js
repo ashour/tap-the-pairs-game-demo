@@ -37,8 +37,7 @@ class Pair {
      */
     other(key) {
         if (key === 'first') { return this.second; }
-
-        return this.first;
+        else if (key === 'second') { return this.first; }
     }
 
     /**
