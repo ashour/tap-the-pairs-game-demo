@@ -17,7 +17,8 @@ class Header extends Component {
                     </p>
 
                     <p className="Header__info">
-                        This game was made as a demo for a <a href="#">PhraseApp Blog article</a> and is
+                        This game was made as a demo for a{' '}
+                        <a href="https://phraseapp.com/blog/posts/react-i18n-app/">PhraseApp Blog article</a> and is
                         released under the <a href="https://github.com/ashour/tap-the-pairs-game-demo/blob/master/LICENSE">MIT license</a>.
                         It was made with <a href="https://reactjs.org/">React.</a> Check out the source code{' '}
                         <a href="https://github.com/ashour/tap-the-pairs-game-demo">on Github</a>.
