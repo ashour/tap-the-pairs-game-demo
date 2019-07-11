@@ -54,6 +54,7 @@ class TapThePairs extends Component {
      *
      * @param {number} pairIndex
      * @param {string} wordKey 'first' | 'second'
+     * @returns {number}
      */
     getWordOrder(pairIndex, wordKey) {
         const wordIndex = (pairIndex * 2) + (wordKey === 'first' ? 0 : 1);

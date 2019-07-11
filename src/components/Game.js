@@ -54,7 +54,7 @@ class Game extends Component {
     /**
      * @param {string} category
      */
-    selectedCategory(category) {
+    selectCategory(category) {
         this.setState({ selectedCategory: category }, () =>
             this.fetchWordsAndTranslations());
     }
@@ -76,7 +76,7 @@ class Game extends Component {
 
                     <CategorySelector
                         value={this.state.selectedCategory}
-                        onChange={category => this.selectedCategory(category)}
+                        onChange={category => this.selectCategory(category)}
                     />
                 </div>
 
