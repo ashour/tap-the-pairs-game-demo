@@ -7,7 +7,11 @@ class Header extends Component {
     render() {
         return (
             <div className="Header">
-                <img src={logoImage} className="Header__logo"/>
+                <img
+                    src={logoImage}
+                    alt="Tap the Pairs Logo"
+                    className="Header__logo"
+                />
 
                 <div>
                     <p className="Header__lead">
