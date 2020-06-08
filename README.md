@@ -1,3 +1,7 @@
+**⚠️ This repo is no longer maintained! Please visit https://github.com/PhraseApp-Blog/tap-the-pairs-game-demo for the up-to-date repo.**
+
+---
+
 # Tap the Pairs Game Demo
 Tap the Pairs is a word-matching game designed to help you learn a new language. It's inspired by [Duolingo](https://www.duolingo.com/)'s “Tap the pairs” minigame.
 
